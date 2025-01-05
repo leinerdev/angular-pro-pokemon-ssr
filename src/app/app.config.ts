@@ -7,8 +7,6 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { provideServerRoutesConfig } from '@angular/ssr';
-import { serverRoutes } from './app.routes.server';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +14,5 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch()),
-    provideServerRoutesConfig(serverRoutes)
   ],
 };
