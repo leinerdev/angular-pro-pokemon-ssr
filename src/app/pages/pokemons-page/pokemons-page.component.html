@@ -6,7 +6,7 @@
 @if (isLoading()) {
   <app-pokemons-list-skeleton></app-pokemons-list-skeleton>
 } @else {
-  <app-pokemon-list></app-pokemon-list>
+  <app-pokemon-list [pokemons]="pokemons()"></app-pokemon-list>
 }
 
 
