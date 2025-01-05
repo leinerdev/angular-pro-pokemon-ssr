@@ -1,16 +1,16 @@
 <h1 class="text-3xl">Listado de Pókemons</h1>
-<h2 class="text-xl">Página actual</h2>
+<h2 class="text-xl">Página actual: {{ currentPage() }}</h2>
 
 <hr class="my-4">
 
-@if (isLoading()) {
-  <app-pokemons-list-skeleton></app-pokemons-list-skeleton>
-} @else {
+@if (pokemons()) {
   <app-pokemon-list [pokemons]="pokemons()"></app-pokemon-list>
+} @else {
+  <app-pokemons-list-skeleton></app-pokemons-list-skeleton>
 }
 
 
 <div class="flex justify-between mt-4">
-  <button class="mt-2">Anteriores</button>
-  <button class="mt-2">Siguientes</button>
+  <button (click)="loadPokemons(-1)" class="mt-2">Anteriores</button>
+  <button (click)="loadPokemons(+1)" class="mt-2">Siguientes</button>
 </div>
