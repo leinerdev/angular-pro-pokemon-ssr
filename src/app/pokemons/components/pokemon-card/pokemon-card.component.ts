@@ -5,11 +5,12 @@ import {
   input,
 } from '@angular/core';
 import { SimplePokemon } from '../../interfaces/simple-pokemon.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-pokemon-card',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './pokemon-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
